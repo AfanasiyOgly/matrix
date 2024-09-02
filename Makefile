@@ -20,7 +20,7 @@ s21_matrix.a:
 	@ar rcs s21_matrix.a $(ALL_FILE_O)
 
 test: s21_matrix.a
-	@gcc unit_tests.c s21_matrix.a $(FLAGS_PLATFORM) -g -o tests.o
+	@gcc s21_test_matrix.c s21_matrix.a $(FLAGS_PLATFORM) -g -o tests.o
 	@./tests.o
 
 gcov_report:

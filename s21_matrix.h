@@ -1,12 +1,7 @@
 #ifndef S21_MATRIX_H
 #define S21_MATRIX_H
 
-#define EPC 0.0000001
-
-#define SUCCESS 1
-#define FAILURE 0
-
-
+#define EPS 0.0000001
 
 typedef struct matrix_struct {
   double **matrix;
@@ -14,8 +9,6 @@ typedef struct matrix_struct {
   int columns;
 
 } matrix_t;
-
-enum ERROR_CODES { OK, INCORRECT_MATRIX, CALCULATION_ERROR };
 
 int s21_create_matrix(int rows, int columns, matrix_t *result);
 void s21_remove_matrix(matrix_t *A);
@@ -31,7 +24,5 @@ int s21_inverse_matrix(matrix_t *A, matrix_t *result);
 
 double s21_get_determinant(matrix_t *A);
 void s21_get_calc(int row, int col, matrix_t *A, matrix_t *result);
-
-void s21_initialize_matrix(matrix_t *A, double start_value, double iteration_step);
 
 #endif
